@@ -7,13 +7,11 @@ export default class Navbar extends React.Component {
     return (
       <header className="main-header">
         <h1>Welcome to Imager</h1>
-        <p>Your token is {this.props.token}</p>
         <nav>
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/welcome/signup">Signup</Link></li>
             <li><Link to="/welcome/signin">Signin</Link></li>
-            <li><Link to="/library">Library</Link></li>
           </ul>
         </nav>
       </header>

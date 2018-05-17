@@ -1,7 +1,7 @@
 import React from 'react'
 import superagent from 'superagent'
-import Navbar from 'BrowserRouter/Navbar/navbar'
-import Landing from 'BrowserRouter/Landing/landing'
+import Navbar from './BrowserRouter/Navbar/navbar'
+import Landing from './BrowserRouter/Landing/landing'
 import { BrowserRouter, Route } from 'react-router-dom'
 
 export default class App extends React.Component {
@@ -21,6 +21,7 @@ export default class App extends React.Component {
     .send({ username, password })
     .then(res => this.setState({ token: res.body.token }))
     .then(() => localStorage.setItem('token', JSON.stringify(this.state.token)))
+    .then(() => window.location.pathname = '/')    
     .catch(console.error)
   }
 
